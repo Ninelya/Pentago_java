@@ -23,8 +23,8 @@ public class CirclesPanel extends JPanel {
     private SectorOrientation orientation;
     private List<CircleButton> circleButtons = new ArrayList<>();
     private Image background;
-    public GameField gameField;
-    public Sector sector;
+    private GameField gameField;
+    private Sector sector;
 
     public CirclesPanel(Sector sector, int id, final GameField gameField) {
         this.gameField = gameField;
@@ -43,7 +43,7 @@ public class CirclesPanel extends JPanel {
             for (int j = 1; j <= 3; j++) {
                 button = new CircleButton(sector.getBallById(10 * i + j),
                         true, BallColor.WHITE, 10 * i + j);
-                button.parent = this;
+                button.setParent(this);
                 this.add(button, new GridConstraints(i - 1, j - 1, 1, 1,
                         GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
                         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -135,5 +135,19 @@ public class CirclesPanel extends JPanel {
         g.drawImage(background, 0, 0, null);
     }
 
+    public GameField getGameField() {
+        return gameField;
+    }
 
+    public void setGameField(GameField gameField) {
+        this.gameField = gameField;
+    }
+
+    public Sector getSector() {
+        return sector;
+    }
+
+    public void setSector(Sector sector) {
+        this.sector = sector;
+    }
 }

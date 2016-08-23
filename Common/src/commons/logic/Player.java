@@ -7,7 +7,7 @@ public class Player implements Serializable {//TODO implement Player class
     private int id;
     private BallColor color;
     private Game game;
-    public int score;
+    private int score;
 
     public Player(Game game, String name, int id) {
         this.name = name;
@@ -68,5 +68,11 @@ public class Player implements Serializable {//TODO implement Player class
         return color;
     }
 
+    public int getScore() {
+        return score;
+    }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
 }

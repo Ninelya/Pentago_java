@@ -9,7 +9,7 @@ public class Sector implements Serializable {
     public List<Ball> balls = new ArrayList<>();
     private int id;
     private SectorOrientation orientation;
-    public Game game;
+    private Game game;
     BallColor[][] colors;
 
     Sector(Game game, int id) {
@@ -56,5 +56,13 @@ public class Sector implements Serializable {
             if (ball.getId() == i)
                 return ball;
         return null;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 }

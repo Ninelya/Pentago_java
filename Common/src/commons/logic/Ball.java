@@ -4,7 +4,7 @@ package commons.logic;
 import java.io.Serializable;
 
 public class Ball implements Serializable {
-    public Sector sector;
+    private Sector sector;
     private BallColor color;
     private int id;
 
@@ -31,5 +31,11 @@ public class Ball implements Serializable {
         this.color = color;
     }
 
+    public Sector getSector() {
+        return sector;
+    }
 
+    public void setSector(Sector sector) {
+        this.sector = sector;
+    }
 }

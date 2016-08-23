@@ -1,21 +1,19 @@
 package commons.service.commands;
 
 
+
+import commons.logic.Settings;
 import commons.service.Command;
 import commons.service.CommandType;
 
 import java.io.Serializable;
 
 public class ComNewGame implements Command, Serializable {
-    public final int numPlayers;
-    public final int numSectors;
-    public final String firstPlayerName;
+    public final Settings settings;
     public final int formId;
 
-    public ComNewGame(int numPlayers, int numSectors, String firstPlayerName, int formId) {
-        this.numPlayers = numPlayers;
-        this.numSectors = numSectors;
-        this.firstPlayerName = firstPlayerName;
+    public ComNewGame(Settings settings, int formId) {
+        this.settings = settings;
         this.formId = formId;
     }
 

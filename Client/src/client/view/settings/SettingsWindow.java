@@ -9,9 +9,9 @@ import java.awt.*;
 
 public class SettingsWindow extends JFrame {
 
-    JComboBox<String> comboSectors;
-    JComboBox<String> comboPlayers;
-    JTextField playerName;
+    private JComboBox<String> comboSectors;
+    private JComboBox<String> comboPlayers;
+    private JTextField playerName;
     public static SettingsWindow instance;
 
     public SettingsWindow() {
@@ -193,4 +193,23 @@ public class SettingsWindow extends JFrame {
         return comboPlayers.getSelectedIndex() + 2;
     }
 
+    public JComboBox<String> getComboSectors() {
+        return comboSectors;
+    }
+
+    public void setComboSectors(JComboBox<String> comboSectors) {
+        this.comboSectors = comboSectors;
+    }
+
+    public JComboBox<String> getComboPlayers() {
+        return comboPlayers;
+    }
+
+    public void setComboPlayers(JComboBox<String> comboPlayers) {
+        this.comboPlayers = comboPlayers;
+    }
+
+    public void setPlayerName(JTextField playerName) {
+        this.playerName = playerName;
+    }
 }

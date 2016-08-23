@@ -14,8 +14,8 @@ import commons.service.commands.RespNewGame;
 public class Exec {
     public static Respond doColorBall(Command command) {
         ComColorBall com = (ComColorBall) command;
-        BallColor[][] newColors = com.ball.sector.colorBall(com.ball, com.newColor);
-        return new RespColorBall(com.ball.sector, newColors);
+        BallColor[][] newColors = com.ball.getSector().colorBall(com.ball, com.newColor);
+        return new RespColorBall(com.ball.getSector(), newColors);
     }
 
     public static Respond doLoadGame(Command command) {
@@ -24,7 +24,11 @@ public class Exec {
 
     public static Respond doNewGame(Command command) {
         ComNewGame com = (ComNewGame) command;
-        Game newGame = new Game(com.numPlayers, com.numSectors, com.firstPlayerName, com.formId);
+        Game newGame = new Game(
+                com.settings.getPlayersNumber(),
+                com.settings.getSectorsNumber(),
+                com.settings.names.get(0),
+                com.formId);
         Respond respond = new RespNewGame(newGame);
         return respond;
     }

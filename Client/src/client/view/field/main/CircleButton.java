@@ -12,7 +12,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class CircleButton extends JButton {
-    public CirclesPanel parent;
+    private CirclesPanel parent;
     private Image image;
     private int id;
     private boolean isClickable;
@@ -54,10 +54,10 @@ public class CircleButton extends JButton {
     //TODO customize to active player
     public void clickMouse() {
         if (isClickable && !isColored) {
-            BallColor color = parent.gameField.game.getActivePlayer().getColor();
+            BallColor color = parent.getGameField().getGame().getActivePlayer().getColor();
             setImage(color);
             isColored = true;
-            ConnectionInvoker.invoke(new ComColorBall(parent.gameField.formId, ball, color));
+            ConnectionInvoker.invoke(new ComColorBall(parent.getGameField().getFormId(), ball, color));
         }
     }
 
@@ -106,6 +106,13 @@ public class CircleButton extends JButton {
         isColored = colored;
     }
 
+    @Override
+    public CirclesPanel getParent() {
+        return parent;
+    }
 
+    public void setParent(CirclesPanel parent) {
+        this.parent = parent;
+    }
 }
 

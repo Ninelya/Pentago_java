@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Settings implements Serializable {
+    public static Settings instance;
     private int sectorsNumber;
     private int playersNumber;
     public List<String> names  = new ArrayList<>();
@@ -13,6 +14,7 @@ public class Settings implements Serializable {
         this.playersNumber = playersNumber;
         this.sectorsNumber = sectorsNumber;
         addName(name);
+        instance = this;
     }
 
     public void addName(String name){

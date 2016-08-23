@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PlayerPanel extends JPanel {
-    Player player;
+    private Player player;
 
     public PlayerPanel(Player player) {
         this.player = player;
@@ -48,5 +48,13 @@ public class PlayerPanel extends JPanel {
                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
                 null, null, null));
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }

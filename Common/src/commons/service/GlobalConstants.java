@@ -1,12 +1,15 @@
 package commons.service;
 
 import java.awt.*;
+import java.nio.file.Paths;
 
 
 public class GlobalConstants {
 
     //path for images
-    public static final String IMG_PATH = "D:\\java\\Pentago\\Common\\src\\commons\\img\\";
+
+    public static final String IMG_PATH = Paths.get("").toAbsolutePath().toString() +
+            "\\Common\\src\\commons\\img\\";
     public static final String IMG_BALL_WHITE = "ball_white.gif";
     public static final String IMG_BALL_BLUE = "ball_blue.gif";
     public static final String IMG_BALL_BLACK = "ball_black.gif";

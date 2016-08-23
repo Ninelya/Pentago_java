@@ -12,7 +12,7 @@ import java.awt.*;
 
 public class MainPanel extends JPanel {
 
-    public GameField gameField;
+    private GameField gameField;
 
     public MainPanel(Game game, GameField gameField) {
         this.gameField = gameField;
@@ -49,5 +49,13 @@ public class MainPanel extends JPanel {
                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
                 GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
                 null, null, null));
+    }
+
+    public GameField getGameField() {
+        return gameField;
+    }
+
+    public void setGameField(GameField gameField) {
+        this.gameField = gameField;
     }
 }

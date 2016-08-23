@@ -12,9 +12,9 @@ import java.util.LinkedList;
 public class GameField extends JFrame {
 
     public static java.util.List<GameField> gameFields = new LinkedList<>();
-    public int formId;
+    private int formId;
     private Container contentPane;
-    public Game game;
+    private Game game;
 
     public static GameField getFieldById(int formId) {
         for (GameField field : gameFields) {
@@ -40,5 +40,21 @@ public class GameField extends JFrame {
 
     public static void showMessage(GameField field, String message) {
         JOptionPane.showMessageDialog(field, message);
+    }
+
+    public int getFormId() {
+        return formId;
+    }
+
+    public void setFormId(int formId) {
+        this.formId = formId;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 }

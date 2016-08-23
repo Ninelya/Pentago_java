@@ -2,6 +2,7 @@ package client.view.settings;
 
 import client.service.ConnectionInvoker;
 import client.view.ClientMainScreen;
+import commons.logic.Settings;
 import commons.service.GlobalConstants;
 import commons.service.commands.ComNewGame;
 
@@ -33,11 +34,12 @@ public class ButtonNew extends JButton {
                     ClientMainScreen.instance,
                     "Please, enter your name.");
         else {
-            ConnectionInvoker.invoke(new ComNewGame(
+            new Settings(
                     parentWindow.getPlayersNum(),
                     parentWindow.getSectorsNum(),
-                    parentWindow.getPlayerName(),
-                    0));//single frame for a new game
+                    parentWindow.getPlayerName()
+            );
+            ConnectionInvoker.invoke(new ComNewGame(Settings.instance, 0));//single frame for a new game
             parentWindow.setVisible(false);
         }
     }
